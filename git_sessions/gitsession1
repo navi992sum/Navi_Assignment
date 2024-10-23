@@ -1,0 +1,65 @@
+   NAVEEN KUMAR
+
+select * from Employees;
+select * from Employee_Address;
+select * from Departments;
+
+
+--1.Create a Projects table --project_id- primary key,department_id,start_date,end_date ,
+--department_id(foreign key)- from Departments table.Also have a check constraint(End date comes after the start date)
+
+create table projects(
+project_id Number(5) PRIMARY KEY,
+project_name VARCHAR(100),
+department_id NUMBER(5) foreign key referrence departments,
+start_date to_date('dd/mm/yyyy') 
+end_date to_date('dd/mm/yyyy') check end_date > start_date);
+
+-- 2. Insert a few sample projects into the Projects table
+-- project_id	project_name	department_id	start_date	end_date
+-- 1, 'Employee Management System', 10, '01-01-2024', '30-06-2024'
+-- 2, 'Financial Reporting Tool', 20, '01-02-2024', '31-07-2024'
+-- 3, 'E-commerce Platform', 30, '01-03-2024', '31-12-2024'
+
+INSERT INTO projects(1,'Employee Management System',10, to_date('01-01-2024','DD/MM/YYYY'), to_date('30-06-2024','DD/MM/YYYY');
+INSERT INTO projects(2,'Financial Reporting Tool',20, to_date('01-02-2024','DD/MM/YYYY'), to_date('31-07-2024','DD/MM/YYYY');
+INSERT INTO projects(3,'E-commerce Platform',30, to_date('01-03-2024','DD/MM/YYYY'), to_date('31-12-2024','DD/MM/YYYY');
+
+
+Check if values are properly inserted
+
+--3.Find the Highest, Lowest and average Salaries from Employee table
+
+SELECT MAX(salary) AS Maximum, MIN(salary) AS Minimum, AVG(salary) as Average FROM employee;
+
+--4. Retrieve the names, job titles, and addresses of all employees.
+
+SELECT employee_name,job_title,(Select address_line1,address_line2 from employee_Address) AS Address FROM employee;
+
+--5. List employees whose address city matches the city of their department
+
+--5. List employees whose address city matches the city of their department
+SELECT e.employee_name, d.department_name, a.city FROM Employees e
+JOIN Employee_Address a ON e.employee_number = a.employee_number
+JOIN Departments d ON e.department_id = d.department_id
+WHERE a.city = d.city;
+
+--6.Count of Employees in Each Department
+SELECT COUNT(emplyee_ID), department_id, from employee GROUP BY department_id;
+
+--7.Get Month of the project start date along with the project name from the Projects table
+
+SELECT project_name, Month(start-date,MON) AS Month from projects;
+
+--8.Create a table from employee table as a backup table
+
+CREATE TABLE emp_backup SELECT * FROM employee;
+
+--9.Count the number of employees for each job title.
+
+SELECT COUNT(employee_id) AS EmpNumbers,job_title FROM employee GROUP BY job_title;
+
+--10. Change the job title of an employee 1003 to 'Senior CLERK'.
+
+UPDATE TABLE employee SET job_title= 'Senior CLERK' WHERE employee_id=1003;
+
