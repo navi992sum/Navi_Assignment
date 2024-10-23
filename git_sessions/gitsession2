@@ -1,0 +1,358 @@
+Tuesday, Oct 1st 2024
+=======================
+ITERABLE:
+range(S,E,St)
+  must be ALL int ONLY (not float)
+for j in range(14.5,25.5,1.5):
+    print(j)
+error
+   what???
+  for j in range(14.5,25.5,1.5):
+      TypeError: 'float' object cannot be interpreted as an integer
+>>> 
+   why?
+     start, end and step MUST TAKE INT ONLY
+
+str ...... series of char ......
+collection of elements/members
+kind of DATA STRUCTURE .....
+[ ] .....  list series of elements [10,44,9,16....]
+           LINKED LIST , SINGLE LINKED LIST, DOUBLE LINKED LIST 
+( ) ...... series of element tuple ('Vikas','Sandhya','Xavier',.....)
+           similar to list 
+
+{ } ...... set of elements       { 10,'Vikram',True,False,45+2j,None }
+
+(similar to 
+PRIMARY KEY
+IN SQL table)
+    |
+   KEY  VALUE   KEY   VALUE
+    |     |       |    |
+{ 100:'Deepak', 777:'Chandra',1992: 'Kiran Kumar' }  .... dict()
+
+IMMUTABLE  :::: cannot be ALTERED / MODIFICATION is NOT allowed...FIXED
+===========
+1) int 
+2) float
+3) bool
+4) str  ....applicable in Java and Python  C++,C ....const int *ptr;
+5) complex
+6) NoneType
+7) ( ) tuple 
+8) dict KEY MUST BE immutable 
+ 
+MUTABLE    ::: can be ALTERED  modified , adding , editing , deleting..
+1) list [ ]
+2) set { }
+3) dict  KEY : VALUE 
+for n in range(start,end,step):
+
+age = 10
+age = 19
+age = 14+10
+
+       
+for loop in conjunction with range() ---- will FINITE 
+
+while  CONDITION:
+     ... 
+     ...
+     ....
+        need to make the CONDTION tend towards FALSITY
+                                             (EXIT point)
+
+for j in range(1,10+1):
+    print(j)
+                                                j
+                                                |  
+                -2 -1 0  1  2 3  4  5 6  7 8  9 10 11
+j = 1
+while j < 11:         is 11 < 11 ?  NO; it is equal ....FALSE
+      print(j)
+      j = j  + 1   <<<< INCREMENTAL COUNTER 
+      #j+=1
+
+
+==working code ===
+print('---VIA FOR loop 1 to 10 ------')
+for j in range(1,10+1):
+    print(j,end=' ')
+print('\n---out of for loop body ---')          
+print()
+print('\n---VIA while loop 1 to 10 ------')    
+j = 1 
+final=26
+one_less = final - 1
+while j < final:
+      if j == one_less:
+         print(j,end='')
+      else:
+         print(j,end=', ')
+      j = j + 1 
+print('\n---out of while loop body ---\n')      
+curr_start=14.5 # in amps
+curr_step = 1.5
+curr_stop=25.5
+voltage=40.5
+while curr_start < curr_stop:
+      resistance = voltage/curr_start
+      print(round(resistance,2),end=', ')
+      #start=start + step
+      curr_start+=curr_step
+
+====================     
+     
+
+diff b/w while and for 
+while is used for iterating indefinite time
+while loop permits float , int as step values
+...............
+for loop for finite
+for loop only int for start, stop, step
+
+QS) keep inputting the number ; EXIT out when the user inputs -1
+    what ever number inputted total, find the avg ; find the highest
+    and the lowest
+while True:
+     ....
+     ....
+0A)  total, high=0 low = highest 334824823482y4823333
+0) come inside the LOOP BODY :: with force ....True
+1) input a number 
+2) is the number -1 ?
+   NO
+      3) total that number t = t + n  ACCUMULATOR
+         KEEP a counter    c = c + 1  COUNTER
+         check whether the n is greater than high
+              YES then move n to high   n ---> high
+              NO  ..ignore
+               
+              whether the n is lower than low_value 
+              YES it is then move n to low_value  n -----> low_value
+              NO  ..ignore
+         go back to STEP 1
+ 
+   YES it is -1
+          use break keyword to COME OUT OF THE BODY OF THE LOOP
+
+
+O U T S I D E the  L O O P  body
+................................
+summary/stats
+     total
+     avg = total/how
+     high
+     low_value
+
+
+====all time correct factoring the BOUNDARY VALUES ====
+'''
+0A)  total, high=0 low = highest 334824823482y4823333
+0) come inside the LOOP BODY :: with force ....True
+1) input a number 
+2) is the number -1 ?
+   NO
+      3) total that number t = t + n  ACCUMULATOR
+         KEEP a counter    c = c + 1  COUNTER
+         check whether the n is greater than high
+              YES then move n to high   n ---> high
+              NO  ..ignore
+               
+              whether the n is lower than low_value 
+              YES it is then move n to low_value  n -----> low_value
+              NO  ..ignore
+         go back to STEP 1
+ 
+   YES it is -1
+          use break keyword to COME OUT OF THE BODY OF THE LOOP
+
+
+O U T S I D E the  L O O P  body
+................................
+summary/stats
+     total
+     avg = total/how
+     high
+     low_value
+'''
+import sys
+is_incorrect = False
+high=-sys.maxsize-1
+low_value=sys.maxsize
+print('inital high value [this is the lowest number] ',high)
+print('inital low value [this is the HIGHEST number] ',low_value)
+total=0
+c=0 
+while True:
+  n=int(input('enter a number type -1 to STOP '))
+  if n > sys.maxsize or n < (-sys.maxsize-1):
+     print('---OUT of range input ....hence EXIT ----')
+     is_incorrect = True
+     break
+  if n == -1:
+    break
+  total = total + n 
+  c = c + 1  
+  if n > high:
+     high = n 
+  if n < low_value:
+     low_value = n 
+     
+print('---outside the loop body printing STATS ---') 
+if is_incorrect == False:
+   print('total ',total)
+   avg = total / c 
+   print('avg is ',avg )
+   print('highest ',high)
+   print('lowest ',low_value)
+  
+
+FROM THE STATS POINT OF VIEW.....
+=========================================
+import sys
+print(sys.maxsize)
+9223372036854775807
+
+print(-1*sys.maxsize-1)
+-9223372036854775808
+
+print(-sys.maxsize-1)
+-9223372036854775808  
+
+2 bytes int  (no sign-bit)
+ 65535       2^15 2^14
+
+ 32768  max +ive number
+ 
+ 32768-1 = -32767
+one bit ---SIGN BIT 
+
+whenever you use str to process in the for loop use len('Ganesh Kumar')
+SLICING THE STRING 
+          part of the string 
+012345678901    <<<< INDEX or SUBSCRIPT 
+SRIKANTH RAO  <--- name
+
+print(name[0:8])
+
+01234567890123456789
+SHanKAR DAyaL SHarMa
+
+print(name1[8:13].title())
+
+print(name1[14:].title())
+
+===captured the IDLE flow ======
+len('Ganesh Kumar')
+12
+
+len('Ganesh Kumar'+' Rao')
+16
+
+len('')
+0
+
+len("")
+0
+
+name='SRIkanTH RaO'
+name.upper()
+'SRIKANTH RAO'
+
+name.lower()
+'srikanth rao'
+
+name.title()
+'Srikanth Rao'
+
+name1='SHanKAR DAyaL SHarMa'
+name1.title()
+'Shankar Dayal Sharma'
+
+name1
+'SHanKAR DAyaL SHarMa'
+
+name1.lower
+<built-in method lower of str object at 0x00000215E45C6870>
+name1.lower()
+'shankar dayal sharma'
+len(name1)
+20
+
+len(name)
+12
+
+print(name[0:8])
+Srikanth
+
+print(name[0:8].title())
+Srikanth
+
+print(name[0:8].upper())
+SRIKANTH
+
+print(name1[8:13].title())
+
+Dayal
+print(name1[14:].title())
+
+Sharma
+name1 = name1 + ' 9th President of India'
+name1
+'SHanKAR DAyaL SHarMa 9th President of India'
+
+print(name1[14:].title())
+Sharma 9Th President Of India
+
+email='ganesh.kumar@yahoo.com'
+email1='kapil.dev.nikanj@hotmail.com'
+email.index('@')
+12
+
+pos =email.index('@')
+pos
+12
+
+email[pos+1:]
+'yahoo.com'
+
+email1.index('@')
+16
+
+pos =email1.index('@')
+pos
+16
+
+email1[pos:]
+'@hotmail.com'
+
+email1[pos+1:]
+'hotmail.com'
+
+email1[0:pos]
+'kapil.dev.nikanj'
+
+email[0:12]
+'ganesh.kumar'
+
+email1 - email
+Traceback (most recent call last):
+  File "<pyshell#44>", line 1, in <module>
+    email1 - email
+TypeError: unsupported operand type(s) for -: 'str' and 'str'
+
+email1 + email
+'kapil.dev.nikanj@hotmail.comganesh.kumar@yahoo.com'
+
+email1 + ";" +email
+'kapil.dev.nikanj@hotmail.com;ganesh.kumar@yahoo.com'
+
+
+
+
+
+
+
+
+    
