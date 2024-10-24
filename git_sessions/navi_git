@@ -1,0 +1,113 @@
+assignment related with list and its method
+deep copy, shallow copy, generating random numbers
+======
+follow these points , understand them , and execute , you will have good idea how the flow
+works...
+
+program to generate 20 random numbers say in the range of 200 to 300
+and store it in a list 
+
+Prog:: gen random numbers and store in list
+import random as rd
+lst = []
+for j in range(20):
+    rdn_num = rd.randint(200,300)
+    lst.append(rdn_num)
+# displaying them
+for j in lst:
+    print(j,end=", ")
+
+Prog:: to generate float based random numbers
+================================================
+import random as rd
+lst = []
+for j in range(20):
+    rdn_num = rd.uniform(200,300)
+    lst.append(round(rdn_num,2))
+# displaying them
+for j in lst:
+    print(j,end=", ")
+
+Prog:: to generate random text of size as mentioned as in k=
+explore these...
+
+import random
+import string
+
+# Define the length of the string
+length = 10
+
+# Generate a random string
+print(string.ascii_letters)
+print(string.digits)
+print(string.punctuation)
+print()
+for j in range(5):
+    some_str = ''.join(random.choices("HelloBangalore123WelcomeMysore456", k=5))
+    print(some_str)
+      
+for k in range(10):    
+    random_string = ''.join(random.choices(string.ascii_letters + string.digits + string.punctuation, k=length))
+    print("\nRandom string:", random_string)
+
+......
+Assignment start here:-
+1) input 10 numbers and store the numbers in TWO lists
+   neg_lst  is the number inputted is -ive
+   pos_lst is the number inputted is +ive
+  find the total, avg of each list
+  find the highest, lowest of each list
+
+2) generate 20 random numbers in the range of 145 to 322
+   store them in the list
+   sort the list
+   find the highest and lowest
+   add the first five and last 3 elements - display the total
+   
+   ::tricky::
+   iterate the list and delete all the elements between 165 to 222
+   display the truncated list
+
+3) foul_lang_word=["fword1","bad1","bad2","fword2","bad3","fword99","bad88"]
+   given above are the bad words or foul words (given above , use it)
+   input words till the user type "STOP"
+   add the words in lst_word
+   if the word is one of the bad words IGNORE it ; donot add
+   sort  all the added words and display in sorted manner
+   how many words were added ?
+
+   make a deep copy of the NEW list created as new_deep_list
+   make a shallow copy of the NEW list created as shallow_list
+
+4) have TWO list 
+   value_lst to which only int or float needs to be added
+   str_lst   to which only str needs to be added 
+   keep inputting the data  till user type "STOP" or "EXIT"
+   when the user inputs which is always a str check whether it is int or float 
+   RULE
+      when the user inputs a number it will start from "#23" or "%567.22"
+      then pick all after # and convert it to int
+      if it is % then pick all after % convert to float
+      otherwise it is str
+      example               catg
+      "#45"                 int
+      "Deepak"              str
+      "Amarnath PHd"        str 
+      "%67.22"              float
+      "%2.22"               float
+      "#100"                int
+      "address is 34/55"    str
+
+     so on --- hope you got the hint
+     find the sum, max,min, avg of all the contents in value_lst
+
+******************** **************
+
+
+   
+  
+
+ 
+   
+
+
