@@ -1,0 +1,148 @@
+Monday, Oct 21st 2024
+======================
+ONE of the approach to...
+QS)
+enter employ id and name and store it in emp_dict
+   when the user types -1 STOP and display all the employee ID and name
+   while adding the employ ID and name if the employ ID exists then - display a message 'ID exists'
+
+   after that store all the names in two lists lst_1 names A to M
+   in lst2 names from N to Z
+.... ... .... ...
+
+def check_A_to_M(ch):
+    if ch not in ('Anitha','Amar','Bindu','Chandra'):
+       return True if ch[0] <= 'M' else False
+    else:
+      return False
+    
+def check_N_to_Z(ch):
+    return True if ch[0] >= 'N' else False    
+    
+def add_employees():
+    #emp_dict = {}
+    emp_dict = {1:'Usha',188:'Mahesh',199:'Bindu',999:'Bhaskar',998:'Xavier',177:'Anitha'}
+
+    while False:
+        emp_id = input("Enter Employee ID (type -1 to stop): ")
+        if emp_id == '-1':
+            break
+        emp_name = input("Enter Employee Name: ")
+        
+        if emp_id in emp_dict:
+            print("ID exists")
+        else:
+            emp_dict[emp_id] = emp_name
+    print("\nAll Employees:")
+    for emp_id, emp_name in emp_dict.items():
+        print(f"ID: {emp_id}, Name: {emp_name}")
+    #lst_1 = [name for name in emp_dict.values() if name[0].upper() <= 'M']
+    #lst_2 = [name for name in emp_dict.values() if name[0].upper() > 'M']
+    lst_values = list(emp_dict.values())
+    
+    #lst_A_to_M = list(filter(lambda n : n[0].upper() <= 'M', lst_values ))
+    #lst_N_to_Z = list(filter(lambda n : n[0].upper() >= 'N',  lst_values ))
+  
+    lst_A_to_M = list(filter(lambda n : check_A_to_M(n) , lst_values ))
+    lst_N_to_Z = list(filter(lambda n : check_N_to_Z(n) ,  lst_values ))
+    #print("\nNames from A to M:", lst_1)
+    #print("Names from N to Z:", lst_2)
+    print("\nNames from A to M:", lst_A_to_M)
+    print("\nNames from N to Z:", lst_N_to_Z)
+
+# Call the function
+add_employees()
+
+======================================
+meaning of comprehension :::
+the ability to understand something ....inclusive in A LINE (compact, manageable)
+
+comprehension 
+     \
+    list, tuple
+    set
+    dict ..... K : V 
+
+[ RESULT ITERABLE condition(if ANY) ] 
+   |         \
+  output      \
+             for loop
+
+double all the elements in a list
+lst = [12,5,10,20,30]
+lst_dbl = [ k **2 for k in lst ]
+print(lst)
+print(lst_dbl)
+
+WATCH the variation ....
+[ True condition on the retv element else False  ITERABLE ]
+example:
+name_ttl = [ k.title() if k[0] >='A' and k[0] <='M' else k.upper()  for k in name  ]
+print(name,'  ',name_ttl)
+
+
+WATCH ....1
+________________
+lst = [12,5,10,20,30]
+lst_dbl = [ k * 3 for k in lst ]
+print(lst)
+print(lst_dbl)
+name = ['AshISH','VIjaY','JoHn JAcoB','KriSHna','VIKrAM']
+name_ttl = [ k.title() for k in name  if k[0] >='A' and k[0] <='M']
+print(name,'  ',name_ttl)
+lst = tuple(lst)
+name_ttl = [ k.title() if k[0] >='A' and k[0] <='M' else k.upper()  for k in name  ]
+print(name,'  ',name_ttl)
+
+
+WATCH ....2 (tuple)
+_________________________
+lst = [12,5,10,20,30]
+lst_dbl = [ k * 3 for k in lst ]
+print(lst)
+print(lst_dbl)
+name = ['AshISH','VIjaY','JoHn JAcoB','KriSHna','VIKrAM']
+name_ttl = [ k.title() for k in name  if k[0] >='A' and k[0] <='M']
+print(name,'  ',name_ttl)
+lst = tuple(lst)
+name_ttl = tuple( k.title() if k[0] >='A' and k[0] <='M' else k.upper()  for k in name  )
+print(name,'  ',name_ttl)
+
+WATCH ....3 (set)
+______________________
+lst = [12,5,10,20,30]
+lst_dbl = [ k * 3 for k in lst ]
+print(lst)
+print(lst_dbl)
+name = ['AshISH','VIjaY','JoHn JAcoB','KriSHna','VIKrAM']
+name_ttl = [ k.title() for k in name  if k[0] >='A' and k[0] <='M']
+print(name,'  ',name_ttl)
+lst = tuple(lst)
+name_ttl = { k.title() if k[0] >='A' and k[0] <='M' else k.upper()  for k in name  }
+print(name,'  ',name_ttl)
+
+----
+dict comprehension
+
+new_dict { k:v   ITERABLE  }
+example
+num_range = { k:k**2 for k in range(10,15) }
+
+example
+num_range = { k:k**2 for k in range(10,15) if k%2 == 1}
+print(num_range)
+
+
+very important and observe the VARIATION....
+
+new_dict { k : v + 5 if v > 20 else v -2  ITERABLE  }
+                      |
+              either v+5
+                        OR
+                              v-2
+
+
+
+
+
+
