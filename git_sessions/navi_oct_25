@@ -1,0 +1,153 @@
+Wednesday, Sept 25th 2024
+=============================
+identify variables and what should go into that 
+           |
+        place holder
+                |
+           location name
+              |
+           RAM  --- Random Access Memory (volatile)
+                       |                    |
+                     cleared "dissolved"    |
+                                            |
+                                         limited
+                                            |
+                                        high speed
+                     32 GB RAM
+
+Permanent storage --- Secondary Storage media  (storing in form file)
+                          |
+                        HARD DISK
+                        /     \
+                     SSD     Magnetic 
+                   quick     slow
+
+                   infinite storage capacity
+                   2 TB           
+1000 GB --- 1 TB
+2000 GB     2 TB
+
+vital point:
+ Dynamically Typed Python doesn’t know the type of variable until we run the code. 
+
+
+age = 10
+ |
+type
+ int
+age = 'Sushil'
+str
+ |
+age = True
+ |
+bool
+
+JAVA/C/C++
+int age = 10;
+float salary = 34500.35F;
+String name = "Diwakar";
+boolean  isGraduate = true;
+
+---working code ----
+age=20
+salary_of_employee= 56700.75
+name1='Ronak Talwar'
+name2="Sanjay Manjrekar"
+address1="# 30 K.G Layout, Mysore - 570002"
+address2='# 30 K.G Layout, Mysore ::: 570002'
+is_having_UK_visa=False
+is_he_graduate=True
+is_proj_assigned=None
+cn1=12+8j
+cn2=-13-5j
+print(age,type(age))
+print(salary_of_employee,type(salary_of_employee))
+print(name1,type(name1))
+print(name2,type(name2))
+print(address1,type(address1))
+print(address2,type(address2))
+print(is_having_UK_visa,type(is_having_UK_visa))
+print(is_he_graduate,type(is_he_graduate))
+print(is_proj_assigned,type(is_proj_assigned))
+print(cn1,type(cn1))
+print(cn2,type(cn2))
+
+----output -----
+20 <class 'int'>
+56700.75 <class 'float'>
+Ronak Talwar <class 'str'>
+Sanjay Manjrekar <class 'str'>
+# 30 K.G Layout, Mysore - 570002 <class 'str'>
+# 30 K.G Layout, Mysore ::: 570002 <class 'str'>
+False <class 'bool'>
+True <class 'bool'>
+None <class 'NoneType'>
+(12+8j) <class 'complex'>
+(-13-5j) <class 'complex'>
+
+RULES of variables declaration
+===============================
+1) must not start with number
+2) must not use keywords, reserved words
+3) SPACE between the names of variables is NOT allowed
+4) special char like _ is allowed
+   a$b=100  illegal as $ is not allowed
+   a%b=100  illegal as % is not allowed
+5) length of variable (technically can be v long) but the objective is meaningful
+6) variable name are case sensitive 
+   AGE = 10
+   age = 20
+   Age = 30
+   AGe = 40
+   agE = 50
+   (all FIVE variables are DIFFERENT)
+
+on paper it is ok to have like this...
+adajdjdhajkdh3348934728347284jdhakjdhajkda398439842934728472ashdajkhdajkhdajkhdajkd93329442904829048290482948skdsdka_342846763472_hjahdjkhsdjad = "Bangalore"
+a=b=c=d="Bangalore"
+x=y=z=10+5*3-16/4
+
+LHS      RHS
+          |
+         data is taken from the user and assigned
+force = mass x acceleration
+  |
+  \
+   \
+...computed...
+
+# ==========================================
+# this code is done by the IBRIDGE360 team
+# ==========================================
+radius = 10
+area = 3.14 * radius * radius
+print(area)
+area = 3.14 * radius ** 2
+print(area)
+mass = 50
+acc = 10 # it is meters per sec squared
+force = mass * acc
+print('Force applied is ',force,'N')
+fname="Avinash"
+mname="Raghav"
+lname="Kamath"
+print('my full name is ',fname,mname,lname)
+'''
+finding the volume of Cylinder
+formula is 
+V = 3.14 x r^2 x h
+'''
+radius=4 
+height=11
+volume=3.14 * radius ** 2 * height
+print('Volume of Cylinder is ',volume)
+
+================= xxxxxxxxxxxxxx ========================
+
+
+
+
+
+
+
+
